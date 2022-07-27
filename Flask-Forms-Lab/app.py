@@ -8,7 +8,7 @@ app = Flask(  # Create a flask app
 )
 
 
-username = "llo2ay"
+username = "EH"
 password = "123"
 facebook_friends=["Loai","Yonathan","Adan", "George", "Fouad", "Celina"]
 
