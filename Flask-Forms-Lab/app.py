@@ -8,8 +8,7 @@ app = Flask(  # Create a flask app
 )
 
 
-username = "EH"
-password = "123"
+users = {'EH':'123', 'HE':"321"}
 facebook_friends=["Yuval","Omar","Guy", "Maor", "Yair", "jon jonny", "jack the dull boy", "ysdarehet dude"]
 
 
@@ -20,10 +19,10 @@ def login():
 	else:
 		name = request.form['username']
 		word = request.form['password']
-		if name == username and word == password:
-			return redirect(url_for('home'))
-		else:
-			return render_template('login.html')
+		if name in users:
+			if users[name] == word:
+				return redirect(url_for('home'))
+		return render_template('login.html')
 
 @app.route('/home')
 def home():
